@@ -1,0 +1,91 @@
+# ===========================
+# 模型文件 (Model weights)
+# ===========================
+**/models/**
+**/outputs/**
+*.pth
+*.pt
+*.bin
+*.h5
+*.ckpt
+*.safetensors
+*.onnx
+*.pb
+*.pkl
+*.pickle
+
+# ===========================
+# 数据集 (Datasets)
+# ===========================
+**/Skin Lesion Dataset/**
+**/datasets/**
+*.zip
+*.tar
+*.tar.gz
+*.tgz
+*.tfrecord
+*.parquet
+*.arrow
+
+# ===========================
+# Python
+# ===========================
+__pycache__/
+*.py[cod]
+*.egg-info/
+.eggs/
+dist/
+build/
+*.egg
+.venv/
+venv/
+env/
+.uv/
+
+# ===========================
+# Node / Frontend
+# ===========================
+node_modules/
+.nuxt/
+.output/
+dist/
+*.local
+
+# ===========================
+# 环境变量 & 密钥
+# ===========================
+.env
+.env.local
+.env.*.local
+*.key
+secrets/
+
+# ===========================
+# IDE & Editor
+# ===========================
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.DS_Store
+Thumbs.db
+
+# ===========================
+# Jupyter / Notebooks
+# ===========================
+.ipynb_checkpoints/
+*.ipynb
+
+# ===========================
+# Logs
+# ===========================
+*.log
+logs/
+
+# ===========================
+# Misc
+# ===========================
+*.tmp
+*.temp
+.cache/

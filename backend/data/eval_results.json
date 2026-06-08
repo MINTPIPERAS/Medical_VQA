@@ -1,0 +1,362 @@
+{
+  "summary": {
+    "total_accuracy": 0.6,
+    "total_samples": 30,
+    "total_correct": 18,
+    "error_count": 0,
+    "elapsed_seconds": 53.50383496284485,
+    "by_type": {
+      "clinical": {
+        "accuracy": 0.7272727272727273,
+        "correct": 8,
+        "total": 11
+      },
+      "classification": {
+        "accuracy": 0.5384615384615384,
+        "correct": 7,
+        "total": 13
+      },
+      "description": {
+        "accuracy": 0.5,
+        "correct": 3,
+        "total": 6
+      }
+    },
+    "by_label": {
+      "Cowpox": {
+        "accuracy": 0.8,
+        "correct": 4,
+        "total": 5
+      },
+      "HFMD": {
+        "accuracy": 0.5,
+        "correct": 3,
+        "total": 6
+      },
+      "Monkeypox": {
+        "accuracy": 0.5,
+        "correct": 5,
+        "total": 10
+      },
+      "Healthy": {
+        "accuracy": 1.0,
+        "correct": 4,
+        "total": 4
+      },
+      "Chickenpox": {
+        "accuracy": 0.4,
+        "correct": 2,
+        "total": 5
+      },
+      "Measles": {
+        "accuracy": 0,
+        "correct": 0,
+        "total": 0
+      }
+    }
+  },
+  "errors": [],
+  "misclassified_count": 12,
+  "details": [
+    {
+      "image_path": "Skin Lesion Dataset\\test\\Cowpox\\CWP_23_01_ORIGINAL.jpg",
+      "question": "综合该图像的临床表现，请给出诊断意见、需要鉴别的疾病及初步处理建议。",
+      "ground_truth": "Cowpox",
+      "predicted": "Cowpox",
+      "correct": true,
+      "question_type": "clinical",
+      "model_output": "牛痘与脓皮病（细菌性）的鉴别：脓皮病无焦痂形成，脓液细菌培养阳性。牛痘的黑色焦痂和较慢的病程是区分两者的关键特征。",
+      "reference": "诊断为牛痘(Cowpox)，由牛痘病毒引起，经接触感染动物传播。鉴别诊断包括炭疽（恶性脓疱）、猫抓病、孢子丝菌病。治疗以支持治疗为主，保持创面清洁。牛痘病毒是天花疫苗的基础。"
+    },
+    {
+      "image_path": "Skin Lesion Dataset\\test\\HFMD\\HFMD_132_01_13.jpg",
+      "question": "这张皮肤图像显示的是什么疾病？请直接给出疾病名称。",
+      "ground_truth": "HFMD",
+      "predicted": "HFMD",
+      "correct": true,
+      "question_type": "classification",
+      "model_output": "手足口病与摩擦性水疱的鉴别：摩擦性水疱多见于足底受压部位，水疱较大且内容液更清亮，无口腔病变，无发热。手足口病水疱小而多，呈椭圆形沿皮纹分布，有全身症状。",
+      "reference": "手足口病(HFMD / Hand, Foot, and Mouth Disease)"
+    },
+    {
+      "image_path": "Skin Lesion Dataset\\test\\Monkeypox\\MKP_28_03_12.jpg",
+      "question": "What skin condition is shown in this image? Provide the name of the disease.",
+      "ground_truth": "Monkeypox",
+      "predicted": "Unknown",
+      "correct": false,
+      "question_type": "classification",
+      "model_output": "The image shows a small, flat-topped丘疹 (wart) with a shiny,中央脐凹和边界水肿的特点. These characteristics are consistent with a koala pod. Koala pod丘疹通常单发性，位于手部和手指等暴露部位，直径2-4mm，表面有脐凹和轻微边界水肿。",
+      "reference": "猴痘(Monkeypox / Mpox)"
+    },
+    {
+      "image_path": "Skin Lesion Dataset\\test\\Healthy\\HEALTHY_63_01_4.jpg",
+      "question": "综合该图像的临床表现，请给出诊断意见、需要鉴别的疾病及初步处理建议。",
+      "ground_truth": "Healthy",
+      "predicted": "Healthy",
+      "correct": true,
+      "question_type": "clinical",
+      "model_output": "该图像显示正常的健康皮肤。皮肤表面光滑平整，肤色均匀，无异常色素沉着、红斑、丘疹、水疱、鳞屑或溃疡等病理性改变。皮肤纹理和弹性外观正常。无任何皮肤疾病的临床体征。",
+      "reference": "该图像显示正常健康皮肤，无任何皮肤疾病的临床体征。皮肤屏障完整，色泽均匀，质地正常。无需任何医疗干预，建议保持日常皮肤护理。"
+    },
+    {
+      "image_path": "Skin Lesion Dataset\\test\\Monkeypox\\MKP_114_01_6.jpg",
+      "question": "综合该图像的临床表现，请给出诊断意见、需要鉴别的疾病及初步处理建议。",
+      "ground_truth": "Monkeypox",
+      "predicted": "Monkeypox",
+      "correct": true,
+      "question_type": "clinical",
+      "model_output": "猴痘皮损继发细菌感染的图像：脓疱周围的炎性红晕明显增宽融合，形成蜂窝织炎样外观。部分脓疱破溃后有脓血性分泌物。继发细菌感染是猴痘最常见的并发症之一，需抗生素治疗。",
+      "reference": "诊断为猴痘(Mpox)，由猴痘病毒(MPXV)引起。与水痘的关键鉴别点在于猴痘皮损同步发展（水痘分期出现）和离心性分布。鉴别诊断包括水痘、传染性软疣、药疹。治疗以支持治疗为主，重症可用Tecovirimat。"
+    },
+    {
+      "image_path": "Skin Lesion Dataset\\test\\Monkeypox\\MKP_136_01_5.jpg",
+      "question": "请判断该皮肤图像中的疾病类型。",
+      "ground_truth": "Monkeypox",
+      "predicted": "Monkeypox",
+      "correct": true,
+      "question_type": "classification",
+      "model_output": "猴痘皮损继发细菌感染的图像：脓疱周围的炎性红晕明显增宽融合，形成蜂窝织炎样外观。部分脓疱破溃后有脓血性分泌物。继发细菌感染是猴痘最常见的并发症之一，需抗生素治疗。",
+      "reference": "猴痘(Monkeypox / Mpox)"
+    },
+    {
+      "image_path": "Skin Lesion Dataset\\test\\Monkeypox\\MKP_70_01_10.jpg",
+      "question": "该皮肤病变属于以下哪种疾病？（从Chickenpox/Cowpox/HFMD/Healthy/Measles/Monkeypox中选择）",
+      "ground_truth": "Monkeypox",
+      "predicted": "Chickenpox",
+      "correct": false,
+      "question_type": "classification",
+      "model_output": "该图像中的皮损呈现多形性：既有新发的红色斑丘疹，也有成熟的水疱和陈旧的结痂。这种不同阶段皮损同时存在的现象是水痘最具特征性的表现之一。皮损处于出疹早期至中期阶段。",
+      "reference": "猴痘(Monkeypox / Mpox)"
+    },
+    {
+      "image_path": "Skin Lesion Dataset\\test\\Monkeypox\\MKP_72_01_1.jpg",
+      "question": "这张皮肤图像显示的是什么疾病？请直接给出疾病名称。",
+      "ground_truth": "Monkeypox",
+      "predicted": "Monkeypox",
+      "correct": true,
+      "question_type": "classification",
+      "model_output": "猴痘发病初期的皮肤图像：面部和四肢开始出现红色斑疹和丘疹，皮疹尚处于早期阶段。此时患者可能有发热、头痛、肌痛和淋巴结肿大等前驱症状。皮损尚未形成典型的脐凹状脓疱。",
+      "reference": "猴痘(Monkeypox / Mpox)"
+    },
+    {
+      "image_path": "Skin Lesion Dataset\\test\\HFMD\\HFMD_74_02_ORIGINAL.jpg",
+      "question": "What skin condition is shown in this image? Provide the name of the disease.",
+      "ground_truth": "HFMD",
+      "predicted": "Unknown",
+      "correct": false,
+      "question_type": "classification",
+      "model_output": "The image shows a mouth with a significant number ofaneous (mouth) lesions. This is most commonly seen with口腔溃疡 (ankeritis) or 类疡 (eczema) rather than됌.",
+      "reference": "手足口病(HFMD / Hand, Foot, and Mouth Disease)"
+    },
+    {
+      "image_path": "Skin Lesion Dataset\\test\\Chickenpox\\CHP_39_01_13.jpg",
+      "question": "请以皮肤科医生的专业角度，描述该图像中皮肤病变的临床特征。",
+      "ground_truth": "Chickenpox",
+      "predicted": "Chickenpox",
+      "correct": true,
+      "question_type": "description",
+      "model_output": "水痘皮损继发感染的识别要点：正常水疱周围的红晕通常宽度<2mm且边界清晰。当红晕扩大、融合、边界模糊或出现脓性分泌物时，提示继发细菌感染。需及时使用抗生素治疗。",
+      "reference": "多形性皮疹：斑丘疹、水疱、结痂同时存在。水疱呈露珠状、壁薄、周围有红晕。皮损呈向心性分布（躯干>四肢），分批出现。"
+    },
+    {
+      "image_path": "Skin Lesion Dataset\\test\\Monkeypox\\MKP_88_03_3.jpg",
+      "question": "该皮肤病变属于以下哪种疾病？（从Chickenpox/Cowpox/HFMD/Healthy/Measles/Monkeypox中选择）",
+      "ground_truth": "Monkeypox",
+      "predicted": "Chickenpox",
+      "correct": false,
+      "question_type": "classification",
+      "model_output": "该图像显示水痘愈合期的皮肤：大量棕褐色结痂覆盖病变区域，部分痂下可见浅表糜烂面。水痘愈后通常不留瘢痕，除非发生深层继发感染或搔抓过度导致真皮损伤。",
+      "reference": "猴痘(Monkeypox / Mpox)"
+    },
+    {
+      "image_path": "Skin Lesion Dataset\\test\\Cowpox\\CWP_20_01_5.jpg",
+      "question": "请以皮肤科医生的专业角度，描述该图像中皮肤病变的临床特征。",
+      "ground_truth": "Cowpox",
+      "predicted": "Cowpox",
+      "correct": true,
+      "question_type": "description",
+      "model_output": "牛痘病变的初期表现（丘疹期）：接触部位出现红色实性小丘疹，触之硬实，有轻微触痛。此时尚未形成坏死和焦痂。早期识别结合动物接触史有助于及早诊断。",
+      "reference": "接触部位局限性结节，中央坏死形成黑色焦痂，周围有明显炎性红晕和水肿。常为单发性病变，多见于手部。"
+    },
+    {
+      "image_path": "Skin Lesion Dataset\\test\\HFMD\\HFMD_105_01_3.jpg",
+      "question": "请分析该皮肤病变的可能诊断、鉴别诊断和治疗建议。",
+      "ground_truth": "HFMD",
+      "predicted": "HFMD",
+      "correct": true,
+      "question_type": "clinical",
+      "model_output": "足底及足趾可见数个纺锤形小水疱，长轴沿皮纹方向，水疱呈灰白色，周围有轻度炎性红晕，直径2-5mm。同时口腔可见溃疡性病变。手足口病特征性地影响手掌、足底和口腔（手足口三联征）。",
+      "reference": "诊断为手足口病(HFMD)，多由柯萨奇病毒A16或肠道病毒71型(EV71)引起。鉴别诊断包括疱疹性咽峡炎、水痘。治疗为对症支持：退热、口腔护理、补液。EV71灭活疫苗可预防重症。"
+    },
+    {
+      "image_path": "Skin Lesion Dataset\\test\\Monkeypox\\MKP_81_01.jpg",
+      "question": "综合该图像的临床表现，请给出诊断意见、需要鉴别的疾病及初步处理建议。",
+      "ground_truth": "Monkeypox",
+      "predicted": "Unknown",
+      "correct": false,
+      "question_type": "clinical",
+      "model_output": "手背皮肤可见一处界限清楚的红色丘疹，直径约3mm，无炎症反应。局部皮肤无红肿、发热、疼痛或其他并发症。皮疹可能由昆虫叮咬引起、手背摩擦摩擦或皮肤病变引起。",
+      "reference": "诊断为猴痘(Mpox)，由猴痘病毒(MPXV)引起。与水痘的关键鉴别点在于猴痘皮损同步发展（水痘分期出现）和离心性分布。鉴别诊断包括水痘、传染性软疣、药疹。治疗以支持治疗为主，重症可用Tecovirimat。"
+    },
+    {
+      "image_path": "Skin Lesion Dataset\\test\\Chickenpox\\CHP_15_01_7.jpg",
+      "question": "What skin condition is shown in this image? Provide the name of the disease.",
+      "ground_truth": "Chickenpox",
+      "predicted": "Unknown",
+      "correct": false,
+      "question_type": "classification",
+      "model_output": "The skin in this image shows a variety of lesions, which are classified as exquisitely tender. This term refers to the severe, itchy nature of the skin in people with insect bite reactions. The image shows:\n- Multiple tender丘疹（tender papules）：小水疱在皮肤表面。\n- 痘（kettleoo）：类似水疱的病变，但在躯干或四肢更常见。\n- 痘痘（kettleoo",
+      "reference": "水痘(Chickenpox / Varicella)"
+    },
+    {
+      "image_path": "Skin Lesion Dataset\\test\\HFMD\\HFMD_65_01_10.jpg",
+      "question": "What skin condition is shown in this image? Provide the name of the disease.",
+      "ground_truth": "HFMD",
+      "predicted": "Healthy",
+      "correct": false,
+      "question_type": "classification",
+      "model_output": "The image shows a normal healthy skin with no visible abnormalities. It resembles the dermal layer of a newborn or an adult with smooth, intact, and unremarkable skin. No signs of arthropod叮咬、角化异常、炎症、色素性改变或病理性改变。",
+      "reference": "手足口病(HFMD / Hand, Foot, and Mouth Disease)"
+    },
+    {
+      "image_path": "Skin Lesion Dataset\\test\\Cowpox\\CWP_41_03_2.jpg",
+      "question": "请分析该皮肤病变的可能诊断、鉴别诊断和治疗建议。",
+      "ground_truth": "Cowpox",
+      "predicted": "Cowpox",
+      "correct": true,
+      "question_type": "clinical",
+      "model_output": "牛痘与脓皮病（细菌性）的鉴别：脓皮病无焦痂形成，脓液细菌培养阳性。牛痘的黑色焦痂和较慢的病程是区分两者的关键特征。",
+      "reference": "诊断为牛痘(Cowpox)，由牛痘病毒引起，经接触感染动物传播。鉴别诊断包括炭疽（恶性脓疱）、猫抓病、孢子丝菌病。治疗以支持治疗为主，保持创面清洁。牛痘病毒是天花疫苗的基础。"
+    },
+    {
+      "image_path": "Skin Lesion Dataset\\test\\Cowpox\\CWP_38_02_7.jpg",
+      "question": "综合该图像的临床表现，请给出诊断意见、需要鉴别的疾病及初步处理建议。",
+      "ground_truth": "Cowpox",
+      "predicted": "Cowpox",
+      "correct": true,
+      "question_type": "clinical",
+      "model_output": "牛痘与脓皮病（细菌性）的鉴别：脓皮病无焦痂形成，脓液细菌培养阳性。牛痘的黑色焦痂和较慢的病程是区分两者的关键特征。",
+      "reference": "诊断为牛痘(Cowpox)，由牛痘病毒引起，经接触感染动物传播。鉴别诊断包括炭疽（恶性脓疱）、猫抓病、孢子丝菌病。治疗以支持治疗为主，保持创面清洁。牛痘病毒是天花疫苗的基础。"
+    },
+    {
+      "image_path": "Skin Lesion Dataset\\test\\HFMD\\HFMD_105_01_3.jpg",
+      "question": "该皮肤病变属于以下哪种疾病？（从Chickenpox/Cowpox/HFMD/Healthy/Measles/Monkeypox中选择）",
+      "ground_truth": "HFMD",
+      "predicted": "HFMD",
+      "correct": true,
+      "question_type": "classification",
+      "model_output": "手足口病与药疹（Stevens-Johnson综合征早期）的鉴别：SJS早期可出现口腔糜烂和手足皮疹，但皮疹进展迅速，出现表皮松解征(Nikolsky征阳性)，伴有严重的全身症状。手足口病无表皮松解。",
+      "reference": "手足口病(HFMD / Hand, Foot, and Mouth Disease)"
+    },
+    {
+      "image_path": "Skin Lesion Dataset\\test\\Cowpox\\CWP_41_01_5.jpg",
+      "question": "请描述该皮肤图像中观察到的病变特征（形态、颜色、分布）。",
+      "ground_truth": "Cowpox",
+      "predicted": "Monkeypox",
+      "correct": false,
+      "question_type": "description",
+      "model_output": "猴痘皮损从丘疹向水疱过渡阶段：部分丘疹顶部开始形成清亮的小水疱，呈现丘疱疹的外观。皮损大小和形态开始趋于一致。此阶段的精确识别对早期诊断和隔离至关重要。",
+      "reference": "接触部位局限性结节，中央坏死形成黑色焦痂，周围有明显炎性红晕和水肿。常为单发性病变，多见于手部。"
+    },
+    {
+      "image_path": "Skin Lesion Dataset\\test\\Chickenpox\\CHP_54_02_ORIGINAL.jpg",
+      "question": "这张皮肤图像显示的是什么疾病？请直接给出疾病名称。",
+      "ground_truth": "Chickenpox",
+      "predicted": "Chickenpox",
+      "correct": true,
+      "question_type": "classification",
+      "model_output": "水痘皮损继发感染的识别要点：正常水疱周围的红晕通常宽度<2mm且边界清晰。当红晕扩大、融合、边界模糊或出现脓性分泌物时，提示继发细菌感染。需及时使用抗生素治疗。",
+      "reference": "水痘(Chickenpox / Varicella)"
+    },
+    {
+      "image_path": "Skin Lesion Dataset\\test\\Monkeypox\\MKP_72_07_ORIGINAL.jpg",
+      "question": "Describe the skin lesions shown in this image in terms of morphology, color, and distribution.",
+      "ground_truth": "Monkeypox",
+      "predicted": "Chickenpox",
+      "correct": false,
+      "question_type": "description",
+      "model_output": "The skin lesions in this image are characterized by a cluster of raised, itchy丘疹和水疱 on the face and躯干. The water疱 are typically 5-10mm in diameter and have a clear boundary with a central oedema. This is the characteristic presentation of chickenpox.",
+      "reference": "同步发展的坚实丘疹和脓疱，3-10mm，边界清晰，部分中央有脐凹。皮损呈离心性分布（面部及四肢>躯干），发展阶段一致。"
+    },
+    {
+      "image_path": "Skin Lesion Dataset\\test\\Chickenpox\\CHP_15_01_6.jpg",
+      "question": "请描述该皮肤图像中观察到的病变特征（形态、颜色、分布）。",
+      "ground_truth": "Chickenpox",
+      "predicted": "Monkeypox",
+      "correct": false,
+      "question_type": "description",
+      "model_output": "猴痘皮损消退后的皮肤改变：结痂脱落后常见的后遗改变包括炎症后色素沉着（最常见）、色素减退、萎缩性瘢痕和增生性瘢痕。该图像展示了痂脱后新生皮肤的典型外观。",
+      "reference": "多形性皮疹：斑丘疹、水疱、结痂同时存在。水疱呈露珠状、壁薄、周围有红晕。皮损呈向心性分布（躯干>四肢），分批出现。"
+    },
+    {
+      "image_path": "Skin Lesion Dataset\\test\\Monkeypox\\MKP_142_01_12.jpg",
+      "question": "请分析该皮肤病变的可能诊断、鉴别诊断和治疗建议。",
+      "ground_truth": "Monkeypox",
+      "predicted": "Monkeypox",
+      "correct": true,
+      "question_type": "clinical",
+      "model_output": "猴痘皮损继发细菌感染的图像：脓疱周围的炎性红晕明显增宽融合，形成蜂窝织炎样外观。部分脓疱破溃后有脓血性分泌物。继发细菌感染是猴痘最常见的并发症之一，需抗生素治疗。",
+      "reference": "诊断为猴痘(Mpox)，由猴痘病毒(MPXV)引起。与水痘的关键鉴别点在于猴痘皮损同步发展（水痘分期出现）和离心性分布。鉴别诊断包括水痘、传染性软疣、药疹。治疗以支持治疗为主，重症可用Tecovirimat。"
+    },
+    {
+      "image_path": "Skin Lesion Dataset\\test\\HFMD\\HFMD_30_01_7.jpg",
+      "question": "Based on this skin image, provide a differential diagnosis and management plan.",
+      "ground_truth": "HFMD",
+      "predicted": "Unknown",
+      "correct": false,
+      "question_type": "clinical",
+      "model_output": "The skin image shows a significant number of active herpes zoster (Shingles) lesions. This is a common complication of the disease, where the body reacts to the exogenous zoster virus by producing new lesions. Shingles typically resolves with time but can be treated with antiviral drugs.",
+      "reference": "诊断为手足口病(HFMD)，多由柯萨奇病毒A16或肠道病毒71型(EV71)引起。鉴别诊断包括疱疹性咽峡炎、水痘。治疗为对症支持：退热、口腔护理、补液。EV71灭活疫苗可预防重症。"
+    },
+    {
+      "image_path": "Skin Lesion Dataset\\test\\Monkeypox\\MKP_40_03_8.jpg",
+      "question": "该皮肤病变属于以下哪种疾病？（从Chickenpox/Cowpox/HFMD/Healthy/Measles/Monkeypox中选择）",
+      "ground_truth": "Monkeypox",
+      "predicted": "Monkeypox",
+      "correct": true,
+      "question_type": "classification",
+      "model_output": "猴痘皮损继发细菌感染的图像：脓疱周围的炎性红晕明显增宽融合，形成蜂窝织炎样外观。部分脓疱破溃后有脓血性分泌物。继发细菌感染是猴痘最常见的并发症之一，需抗生素治疗。",
+      "reference": "猴痘(Monkeypox / Mpox)"
+    },
+    {
+      "image_path": "Skin Lesion Dataset\\test\\Chickenpox\\CHP_51_02_1.jpg",
+      "question": "Based on this skin image, provide a differential diagnosis and management plan.",
+      "ground_truth": "Chickenpox",
+      "predicted": "Unknown",
+      "correct": false,
+      "question_type": "clinical",
+      "model_output": "Koplik's spots are a characteristic finding in neonatal streptococcal pharyngitis. They consist of a white, gravelly papule at the site of the tonsillar infection, which is felt to be the result of direct bacterial inoculation into the salivary glands.",
+      "reference": "诊断为水痘(Varicella)，由水痘-带状疱疹病毒(VZV)引起。鉴别诊断包括泛发性带状疱疹、脓疱疮、猴痘。治疗以支持治疗为主：抗组胺药止痒、炉甘石洗剂外用，避免使用阿司匹林。重症可用阿昔洛韦。水痘疫苗可有效预防。"
+    },
+    {
+      "image_path": "Skin Lesion Dataset\\test\\Healthy\\HEALTHY_14_01_6.jpg",
+      "question": "请以皮肤科医生的专业角度，描述该图像中皮肤病变的临床特征。",
+      "ground_truth": "Healthy",
+      "predicted": "Healthy",
+      "correct": true,
+      "question_type": "description",
+      "model_output": "正常新生儿皮肤的生理表现：皮肤呈淡粉红色，可见薄层胎脂（vernix caseosa）。有时可见粟丘疹（鼻部白色小丘疹）或新生儿中毒性红斑——这些均为新生儿期良性一过性表现，不属于疾病范畴。",
+      "reference": "皮肤表面光滑完整，肤色均匀自然。无任何红斑、丘疹、水疱、脓疱、结节、溃疡或鳞屑等病理性皮损。皮肤纹理正常。"
+    },
+    {
+      "image_path": "Skin Lesion Dataset\\test\\Healthy\\HEALTHY_84_01_13.jpg",
+      "question": "Based on this skin image, provide a differential diagnosis and management plan.",
+      "ground_truth": "Healthy",
+      "predicted": "Healthy",
+      "correct": true,
+      "question_type": "clinical",
+      "model_output": "The image shows a normal-appearing skin with a smooth texture, intact skin屏障, and no signs of infection, such as redness, swelling, or pus. The dermal and epidermal layers appear intact and intact.",
+      "reference": "该图像显示正常健康皮肤，无任何皮肤疾病的临床体征。皮肤屏障完整，色泽均匀，质地正常。无需任何医疗干预，建议保持日常皮肤护理。"
+    },
+    {
+      "image_path": "Skin Lesion Dataset\\test\\Healthy\\HEALTHY_39_01_12.jpg",
+      "question": "请判断该皮肤图像中的疾病类型。",
+      "ground_truth": "Healthy",
+      "predicted": "Healthy",
+      "correct": true,
+      "question_type": "classification",
+      "model_output": "正常皮肤中的生理性色素痣（黑痣/Mole）：可见少量棕色至深棕色的圆形斑点或小丘疹，边界清楚，直径<6mm，颜色均匀。这类后天性或先天性黑色素细胞痣在绝大多数人中存在，属于正常发现。",
+      "reference": "健康皮肤(Healthy Skin / Normal)"
+    }
+  ]
+}

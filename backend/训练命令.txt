@@ -1,0 +1,31 @@
+:: ============================================================
+:: Qwen2-VL-2B 训练命令速查（CMD / PowerShell 均可直接复制）
+:: 使用前确保已进入 backend 目录并激活环境：
+::   cd backend
+::   conda activate qwen_vqa
+:: ============================================================
+
+:: ---- CPT 持续预训练（Qwen2-VL-2B 基座模型） ----
+python cpt_qwen.py --train_file data/train_pt_balanced.jsonl --valid_file data/valid_pt.jsonl --output_dir outputs/cpt_lora --num_train_epochs 1.0 --learning_rate 2e-4 --per_device_train_batch_size 1 --gradient_accumulation_steps 4 --max_length 512 --logging_steps 10 --save_steps 200 --fp16
+
+:: ---- SFT 指令微调（Qwen2-VL-2B-Instruct + CPT Adapter） ----
+:: 注意：SFT 需要在 CPT 完成后运行。若要基于 CPT adapter 训练，需先合并或加载 CPT checkpoint。
+:: 以下命令从 Instruct 模型直接 SFT（不依赖 CPT）：
+python sft_qwen.py --train_file data/high_quality_sft_balanced.jsonl --output_dir outputs/sft_lora_v2 --num_train_epochs 5 --learning_rate 2e-4 --per_device_train_batch_size 1 --max_length 768 --logging_steps 10 --save_steps 200 --fp16
+
+:: ---- 推理测试 ----
+:: SFT 推理（当前最优 v2）
+python infer_qwen.py --base_model models/qwen/Qwen2-VL-2B-Instruct --adapter_dir outputs/sft_lora_v2 --mode sft --image "Skin Lesion Dataset/test/Chickenpox/CHP_03_01_9.jpg" --question "请仔细观察这张皮肤病变图像，给出最可能的诊断及诊断依据。"
+
+:: CPT 推理
+python infer_qwen.py --base_model models/qwen/Qwen2-VL-2B --adapter_dir outputs/cpt_lora --mode cpt --image "Skin Lesion Dataset/test/Chickenpox/CHP_03_01_9.jpg"
+
+:: ---- 评测 ----
+:: 快速评测（600 条平衡子集，~30 分钟）
+python scripts/eval_auto_score.py --base_model models/qwen/Qwen2-VL-2B-Instruct --adapter_dir outputs/sft_lora_v2 --eval_file data/eval_balanced_600.jsonl --output data/eval_results_v2.json
+
+:: 全量评测（3402 条，~2 小时）
+python scripts/eval_auto_score.py --base_model models/qwen/Qwen2-VL-2B-Instruct --adapter_dir outputs/sft_lora_v2 --eval_file data/eval_data.jsonl --output data/eval_results_full.json
+
+:: 快速评测 30 条（调试用）
+python scripts/eval_auto_score.py --max_samples 30 --debug
